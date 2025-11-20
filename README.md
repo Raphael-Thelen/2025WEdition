@@ -86,4 +86,41 @@ pip install -r requirements.txt
 python cs.py
 ```
 
+## 03 Active Waiting
+
+This folder contains experiments to measure the cost of active waiting for systems witch mach kernel.
+
+### Content
+
+- **aw.c**: Original C program that measures the average time of active waiting.
+
+### Varianten
+
+- aw_atomic  (C11 `atomic_flag`)  
+- aw_unfair  (`os_unfair_lock`)
+
+## Compiling
+
+```bash
+cd "03 Active Waiting"
+make all
+```
+
+## Usage
+
+```bash
+# default 10 M iterations
+./aw_atomic
+./aw_unfair
+
+# with CSV-output
+./aw_atomic --csv res_atomic.csv 5000000
+./aw_unfair --csv res_unfair.csv 5000000
+```
+
+## Output
+
+- Mean, Min, Max, Stddev in nano seconds  
+- 95 % CI 
+- optional CSV
 
