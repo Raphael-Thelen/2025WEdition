@@ -5,7 +5,7 @@ Messung der Latenz für aktives Warten (Spinlocks) auf macOS.
 ## Varianten
 
 - aw_atomic  
-  Nutzt C11-Atomics (`atomic_flag`)  
+  Nutzt C11-Atomics (`atomic_flag`)
 - aw_unfair  
   Nutzt Apples `os_unfair_lock` (in `<os/lock.h>`)
 
@@ -27,15 +27,9 @@ make all
 ```
 
 Standardmäßig wird `ITERATIONS = 10000000` genutzt, kann als Argument überschrieben werden.
+Mit `--csv <file.csv>` kann ein Speicherort für die Ergebnisse angeben werden. Wenn die Datei bereits existiert, werden die Messergebnisse angehangen.
 
 ## Ausgabe
 
-- Mean, Min, Max, Stddev in Nanosekunden  
-- 95 % Konfidenzintervall  
-
-## Nächste Schritte
-
-- CSV-Output (Option `--csv`)  
-- Python-Skript zum Plotten (matplotlib)  
-- Vergleich Intel vs Apple Silicon  
-- Integration in den Abschlussbericht
+- Mean, Min, Max, Stddev in Nanosekunden
+- 95 % Konfidenzintervall
